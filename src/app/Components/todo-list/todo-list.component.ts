@@ -46,6 +46,14 @@ export class TodoListComponent implements OnInit {
   getAllSavedtabsFromStorage(): void {
     this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
       this.savedTabs = tabs;
+      console.log(tabs);
+    });
+  }
+
+  setAllTabsInStorage(tabs:Tab[]): void {
+    console.log(tabs);
+    this.tabsService.setAllTabsInStorage(tabs).subscribe(res=> {
+      this.getAllSavedtabsFromStorage();
     });
   }
 
@@ -56,6 +64,13 @@ export class TodoListComponent implements OnInit {
 
   selectTab(tabIndex: number): void {
     chrome.tabs.highlight({'tabs': tabIndex}, function() {});
+  }
+
+  saveTab(tabIndex: number, catIndex: number): void {
+    const tab = this.tabsList[tabIndex];
+    tab.categoryId = catIndex;
+    this.savedTabs.push(tab);
+    this.setAllTabsInStorage(this.savedTabs);
   }
 
 }

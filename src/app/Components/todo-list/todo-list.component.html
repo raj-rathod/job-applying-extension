@@ -1,6 +1,6 @@
 <p class="text-dark m-0 fw-bold">Current Open Tabs</p>
 <div [class]="tabsList.length > 4 ? 'list-scroller row mt-4':'row mt-4'">
-  <div class="col-lg-11" *ngFor="let tab of tabsList">
+  <div class="col-lg-11" *ngFor="let tab of tabsList; let tabIndex = index">
     <div class="mb-2 d-flex align-items-center justify-content-between current-tab-list">
       <div>
         <a (click)="selectTab(tab.tabIndex)" class="tab">
@@ -20,11 +20,13 @@
                 <img [src]="saveIcon" width="18px" height="18px" alt="save">
              </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-              <div class="px-2 py-1 mb-1 dropdown-menu-list-item tab" *ngFor="let category of category; let catIndex= index">
-                <p class="m-0">
-                  {{category}}
-                </p>
-              </div>
+              <ng-container *ngFor="let category of category; let catIndex= index">
+                <div class="px-2 py-1 mb-1 dropdown-menu-list-item tab" (click)="saveTab(tabIndex, catIndex)">
+                  <p class="m-0">
+                    {{category}}
+                  </p>
+                </div>
+              </ng-container>
             </div>
         </div>
       </div>

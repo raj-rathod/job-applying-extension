@@ -10,17 +10,13 @@ export const getCurrentTabs = async(): Promise<defaultTab[]> => {
 export const getAllSavedtabsFromStorage = async (): Promise<
   Tab[]
 > => {
-    let allSavedTabs: Tab[] = [];
-   await chrome.storage.sync.get(
-    All_Saved_Tabs, (items)=>{
-       allSavedTabs = items[All_Saved_Tabs];
-    }
-  );
-  return allSavedTabs;
+    const allSavedTabs = await chrome.storage.sync.get(All_Saved_Tabs);
+
+  return allSavedTabs[All_Saved_Tabs];
 };
 
 export const setAllTabsInStorage = async (
   tabs: Tab[]
 ): Promise<void> => {
-  return chrome.storage.sync.set({ [All_Saved_Tabs]: tabs });
+  return await chrome.storage.sync.set({ [All_Saved_Tabs]: tabs });
 };
