@@ -47,6 +47,15 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+.dropdown-menu-list-item:hover{
+  background: #a9e5f1a5;
+}
+.dropdown-menu{
+  background: #9aa2a1f1 !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(9.5px) !important;
+  -webkit-backdrop-filter: blur(9.5px) !important;
+}
 
 @media (max-width:768px) {
   h2 {
