@@ -8,5 +8,9 @@
     },
     "options_page": "index.html",
     "host_permissions": ["*://*/"],
-    "permissions": [ "tabs", "activeTab" ]
+    "permissions": [ 
+        "tabs", 
+        "activeTab",
+        "storage"
+    ]
 }

@@ -11,15 +11,6 @@
     border: 1px solid rgba(35, 152, 220, 0.3);
 }
 .navbar-bg{
-    background: #9aa2a154;
+    background: #9aa2a1;
 }
-.current-tab-list{
-    background: #9aa2a154;
-    border-radius: 4px;
-    padding: 14px;
-}
-.list-scroller{
-    height: 300px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
+

@@ -1,0 +1,20 @@
+<p class="text-dark m-0 fw-bold">Current Open Tabs</p>
+<div [class]="tabsList.length > 4 ? 'list-scroller row mt-4':'row mt-4'">
+  <div class="col-lg-11" *ngFor="let tab of tabsList">
+    <div class="mb-2 d-flex align-items-center justify-content-between current-tab-list">
+      <div>
+        <a (click)="selectTab(tab.tabIndex)" class="tab">
+          <img [src]="tab.favIconUrl ? tab?.favIconUrl : defaultIcon"
+          height="25px" width="25px" alt="favIconUrl" class="rounded">
+        </a>
+        <span class="small ms-3 text-dark  tab" [title]="tab.title">
+          <a (click)="selectTab(tab.tabIndex)">{{tab.title.length > 50 ? tab?.title?.substring(0,50) : tab?.title}}</a>
+        </span>
+      </div>
+      
+      <div>
+        <img [src]="doneIcon" width="18px" height="18px" alt="Done">
+      </div>
+    </div>
+  </div>
+</div>
