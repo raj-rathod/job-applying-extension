@@ -1,3 +1,45 @@
 body{
     margin: 0;
+    min-width: 450px !important;
+    min-height: 100vh !important;
+}
+.tab{
+    cursor: pointer;
+}
+/* customize scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height:8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border: 1px solid #939AA9;
+    border-radius: 100px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #939AA9;;
+    border-radius: 100px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #939AA9;;
+  }
+  .navbar-toggler {
+    font-size: 14px !important;
+  }
+  .navbar-toggler:focus{
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+@media (max-width:768px){
+    h2{
+        font-size: 16px !important;
+    }
+    p{
+        font-size: 12px !important;
+    }
 }
