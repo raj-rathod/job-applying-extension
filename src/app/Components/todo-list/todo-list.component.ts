@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { defaultIcon, doneIcon, saveIcon } from 'src/Shared/constant/constant';
+import { category } from 'src/Shared/enums/category.enum';
 import { Tab } from 'src/Shared/interfaces/tab.interface';
 import { TabsService } from 'src/Shared/services/tabs.service';
 
@@ -10,7 +11,9 @@ import { TabsService } from 'src/Shared/services/tabs.service';
 })
 export class TodoListComponent implements OnInit {
   tabsList: Tab[] = [];
+  savedTabs: Tab[] = [];
   todoList: Tab[] = [];
+  category = category;
   defaultIcon = defaultIcon;
   doneIcon = doneIcon;
   saveIcon = saveIcon;
@@ -21,15 +24,16 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCurrentOpenTabs();
+    this.getAllSavedtabsFromStorage();
   }
-  
+
   getAllCurrentOpenTabs(): void {
     this.tabsService.getCurrentTabs().subscribe(tabs => {
       tabs.forEach(tab => {
        const tabData: Tab = {
          id: null,
          title: tab.title|| '', 
-         url: tab.url,
+         url: tab.url||'',
          favIconUrl: tab.favIconUrl,
          windowId: tab.windowId,
          tabIndex: tab.index
@@ -37,6 +41,17 @@ export class TodoListComponent implements OnInit {
         this.tabsList.push(tabData);
       });
     });
+  }
+
+  getAllSavedtabsFromStorage(): void {
+    this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
+      this.savedTabs = tabs;
+    });
+  }
+
+  isSaved(url:string, savedTabs: Tab[]):boolean {
+    const index = savedTabs.findIndex(tab => tab.url === url);
+    return index >= 0;
   }
 
   selectTab(tabIndex: number): void {

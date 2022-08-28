@@ -23,5 +23,4 @@ export class TabsService {
   setAllTabsInStorage(tabs:Tab[]):Observable<void>{
     return from(setAllTabsInStorage(tabs));
   }
-
 }
