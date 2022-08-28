@@ -3,40 +3,26 @@
   <div class="container mb-5">
       <nav class="navbar navbar-expand-lg navbar-light  fixed-top navbar-bg">
         <div class="container">
-          <h2 class="navbar-brand tab">Job Apply Management</h2>
+          <h2 class="navbar-brand tab" (click)="selectCategory(-1)">Job Apply Management</h2>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item" *ngFor="let category of category; let catIndex = index">
-               <p class="nav-link active m-0 fw-bold tab">{{category}}</p>
+               <p class="nav-link active m-0 fw-bold tab"(click)="selectCategory(catIndex)">{{category}}</p>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    <h2 class="text-light mt-5 pt-3">Current Open Tabs</h2>
-    <div [class]="tabsList.length > 4 ? 'list-scroller row mt-4':'row mt-4'">
-      <div class="col-lg-11" *ngFor="let tab of tabsList">
-        <div class="mb-2 d-flex align-items-center justify-content-between current-tab-list">
-          <div>
-            <a (click)="selectTab(tab.tabIndex)" class="tab">
-              <img [src]="tab.favIconUrl ? tab?.favIconUrl : defaultIcon"
-              height="25px" width="25px" alt="favIconUrl" class="rounded">
-            </a>
-            <span class="small ms-3 text-dark  tab" [title]="tab.title">
-              <a (click)="selectTab(tab.tabIndex)">{{tab.title.length > 50 ? tab?.title?.substring(0,50) : tab?.title}}</a>
-            </span>
-          </div>
-          
-          <div>
-            <img [src]="doneIcon" width="18px" height="18px" alt="Done">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="btn btn-primary mt-lg-5 mt-4"(click)="fullPage()"> Open Full page</div>
+      <section class="mt-5 pt-4">
+        <ng-container *ngIf="categoryIndex < 0">
+           <app-todo-list></app-todo-list>
+        </ng-container>
+      </section>
+     
+    <div *ngIf="innerWidth < 992" class="btn btn-primary mt-lg-5 mt-4"(click)="fullPage()"> Open Full page</div>
   </div>
  </div>
 </section>

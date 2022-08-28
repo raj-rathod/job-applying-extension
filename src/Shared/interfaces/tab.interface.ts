@@ -7,5 +7,5 @@ export interface Tab {
     tabIndex: number;
     categoryId?: number;
     isRemoved?: boolean;
-    status?: string;
+    status?: number;
 }
