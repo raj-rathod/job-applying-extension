@@ -46,12 +46,10 @@ export class TodoListComponent implements OnInit {
   getAllSavedtabsFromStorage(): void {
     this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
       this.savedTabs = tabs;
-      console.log(tabs);
     });
   }
 
   setAllTabsInStorage(tabs:Tab[]): void {
-    console.log(tabs);
     this.tabsService.setAllTabsInStorage(tabs).subscribe(res=> {
       this.getAllSavedtabsFromStorage();
     });
@@ -69,6 +67,7 @@ export class TodoListComponent implements OnInit {
   saveTab(tabIndex: number, catIndex: number): void {
     const tab = this.tabsList[tabIndex];
     tab.categoryId = catIndex;
+    tab.todo = true;
     this.savedTabs.push(tab);
     this.setAllTabsInStorage(this.savedTabs);
   }
