@@ -8,4 +8,5 @@ export interface Tab {
     categoryId?: number;
     isRemoved?: boolean;
     status?: number;
+    todo?: boolean;
 }

@@ -1,4 +1,4 @@
-export const enum JobStatus{
+export enum JobStatus{
     apply = 0,
     applied,
     rejected,

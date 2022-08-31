@@ -1,4 +1,4 @@
-export const enum LinkCategory{
+export enum LinkCategory{
     Application_Link = 0,
     Career_Page,
     Dashboard,
