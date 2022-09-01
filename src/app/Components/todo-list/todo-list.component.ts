@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { defaultIcon, doneIcon, saveIcon } from 'src/Shared/constant/constant';
+import { actionIcon, defaultIcon, doneIcon, saveIcon } from 'src/Shared/constant/constant';
+import { Actions, actions } from 'src/Shared/enums/action.enum';
 import { category } from 'src/Shared/enums/category.enum';
 import { Tab } from 'src/Shared/interfaces/tab.interface';
 import { TabsService } from 'src/Shared/services/tabs.service';
@@ -14,9 +15,11 @@ export class TodoListComponent implements OnInit {
   savedTabs: Tab[] = [];
   todoList: Tab[] = [];
   category = category;
+  actionsList = actions;
   defaultIcon = defaultIcon;
   doneIcon = doneIcon;
   saveIcon = saveIcon;
+  actionIcon = actionIcon;
   
   constructor(
     private tabsService: TabsService
@@ -46,6 +49,7 @@ export class TodoListComponent implements OnInit {
   getAllSavedtabsFromStorage(): void {
     this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
       this.savedTabs = tabs;
+      this.getAllTodoTask(tabs);
     });
   }
 
@@ -70,6 +74,21 @@ export class TodoListComponent implements OnInit {
     tab.todo = true;
     this.savedTabs.push(tab);
     this.setAllTabsInStorage(this.savedTabs);
+  }
+
+  todoAction(actionIndex: number, linkIndex: number): void {
+    const index = this.savedTabs.findIndex(saveTab => saveTab == this.todoList[linkIndex]);
+    if(actionIndex === Actions.done){
+      this.savedTabs[index].todo = false;
+    }
+    if(actionIndex === Actions.delete){
+      this.savedTabs.splice(index, 1);
+    }
+    this.setAllTabsInStorage(this.savedTabs);
+  }
+
+  getAllTodoTask(allSavedLink: Tab[]): void{
+    this.todoList = allSavedLink.filter(t => t.todo);
   }
 
 }

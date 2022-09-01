@@ -43,18 +43,24 @@ body {
 }
 
 .list-scroller {
-  height: 300px;
+  height: 250px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 .dropdown-menu-list-item:hover{
   background: #a9e5f1a5;
 }
+
 .dropdown-menu{
   background: #9aa2a1f1 !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(9.5px) !important;
   -webkit-backdrop-filter: blur(9.5px) !important;
+}
+
+a{
+  color: black !important;
+  text-decoration: none !important;
 }
 
 @media (max-width:768px) {
@@ -64,5 +70,8 @@ body {
 
   p {
     font-size: 12px !important;
+  }
+  .list-scroller {
+    height: 200px;
   }
 }

@@ -1,6 +1,6 @@
 <section class="section">
  <div class="contain">
-  <div class="container mb-5">
+  <div class="container mb-md-5 mb-2">
       <nav class="navbar navbar-expand-lg navbar-light  fixed-top navbar-bg">
         <div class="container">
           <h2 class="navbar-brand tab" (click)="selectCategory(-1)">Job Apply Management</h2>
@@ -17,12 +17,13 @@
         </div>
       </nav>
       <section class="mt-5 pt-4">
+        <div *ngIf="innerWidth < 992" class="tab float-end"(click)="fullPage()">
+          <img [src]="expandIcon" alt="expand" width="24px" height="24px">
+        </div>
         <ng-container *ngIf="categoryIndex < 0">
            <app-todo-list></app-todo-list>
         </ng-container>
       </section>
-     
-    <div *ngIf="innerWidth < 992" class="btn btn-primary mt-lg-5 mt-4"(click)="fullPage()"> Open Full page</div>
   </div>
  </div>
 </section>

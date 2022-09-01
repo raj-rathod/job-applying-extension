@@ -6,7 +6,6 @@ export interface Tab {
     windowId: number;
     tabIndex: number;
     categoryId?: number;
-    isRemoved?: boolean;
     status?: number;
     todo?: boolean;
 }

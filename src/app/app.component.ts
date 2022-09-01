@@ -1,4 +1,5 @@
 import { Component, ElementRef, NgZone, OnInit  } from '@angular/core';
+import { expandIcon } from 'src/Shared/constant/constant';
 import { category } from 'src/Shared/enums/category.enum';
 import { Tab } from 'src/Shared/interfaces/tab.interface';
 
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit {
   category = category;
   innerWidth = 0;
   categoryIndex = -1;
+  expandIcon  = expandIcon;
   constructor(
     private elRef: ElementRef
   ){}
