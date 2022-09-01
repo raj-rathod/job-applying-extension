@@ -1,6 +1,6 @@
 import { Component, ElementRef, NgZone, OnInit  } from '@angular/core';
 import { expandIcon } from 'src/Shared/constant/constant';
-import { category } from 'src/Shared/enums/category.enum';
+import { category, LinkCategory } from 'src/Shared/enums/category.enum';
 import { Tab } from 'src/Shared/interfaces/tab.interface';
 
 
@@ -12,6 +12,7 @@ import { Tab } from 'src/Shared/interfaces/tab.interface';
 export class AppComponent implements OnInit {
   title = 'Job Apply Management';
   category = category;
+  categoryId = LinkCategory;
   innerWidth = 0;
   categoryIndex = -1;
   expandIcon  = expandIcon;
