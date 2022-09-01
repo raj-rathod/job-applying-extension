@@ -9,7 +9,7 @@ export enum LinkCategory{
 export const category: string[] = [
     "Application Link",
     "Career Page",
-    "Dashboard",
+    "Job Dashboard",
     "Study Material",
     "Resume Link"
 ]
