@@ -23,6 +23,21 @@
         <ng-container *ngIf="categoryIndex < 0">
            <app-todo-list></app-todo-list>
         </ng-container>
+        <ng-container *ngIf="categoryIndex === categoryId.Application_Link">
+          <app-applications-link></app-applications-link>
+        </ng-container>
+        <ng-container *ngIf="categoryIndex === categoryId.Career_Page">
+          <app-career-pages-link></app-career-pages-link>
+        </ng-container>
+        <ng-container *ngIf="categoryIndex === categoryId.Dashboard">
+          <app-job-dashboard></app-job-dashboard>
+        </ng-container>
+        <ng-container *ngIf="categoryIndex === categoryId.Study_Materials">
+          <app-study-material></app-study-material>
+        </ng-container>
+        <ng-container *ngIf="categoryIndex === categoryId.Resume_link">
+          <app-resume-link></app-resume-link>
+        </ng-container>
       </section>
   </div>
  </div>
