@@ -17,3 +17,13 @@ export const jobStatus: string[] = [
    "Interview Pass",
    "Offer Letter"
 ];
+
+export const jobStatusTab: string[] = [
+    "task-tab",
+    "warning-tab",
+    "error-tab",
+    "success-tab",
+    "error-tab",
+    "success-tab",
+    "success-tab",
+];

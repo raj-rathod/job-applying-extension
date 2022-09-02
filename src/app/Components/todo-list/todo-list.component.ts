@@ -72,6 +72,7 @@ export class TodoListComponent implements OnInit {
     const tab = this.tabsList[tabIndex];
     tab.categoryId = catIndex;
     tab.todo = true;
+    tab.status = 0;
     this.savedTabs.push(tab);
     this.setAllTabsInStorage(this.savedTabs);
   }
