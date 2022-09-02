@@ -17,12 +17,10 @@ import { StudyMaterialComponent } from './Components/study-material/study-materi
     ApplicationsLinkComponent,
     ResumeLinkComponent,
     CareerPagesLinkComponent,
-    StudyMaterialComponent
+    StudyMaterialComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

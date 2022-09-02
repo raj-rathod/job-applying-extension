@@ -1,27 +1,28 @@
 <section class="section">
- <div class="contain">
-  <div class="container mb-md-5 mb-2">
+  <div class="contain">
+    <div class="container mb-md-5 mb-2">
       <nav class="navbar navbar-expand-lg navbar-light  fixed-top navbar-bg">
         <div class="container">
           <h2 class="navbar-brand tab" (click)="selectCategory(-1)">Job Apply Management</h2>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item" *ngFor="let category of category; let catIndex = index">
-               <p class="nav-link active m-0 fw-bold tab"(click)="selectCategory(catIndex)">{{category}}</p>
+                <p class="nav-link active m-0 fw-bold tab" (click)="selectCategory(catIndex)">{{category}}</p>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <section class="mt-5 pt-4">
-        <div *ngIf="innerWidth < 992" class="tab float-end"(click)="fullPage()">
+        <div *ngIf="innerWidth < 992" class="tab float-end" (click)="fullPage()">
           <img [src]="expandIcon" alt="expand" width="24px" height="24px">
         </div>
         <ng-container *ngIf="categoryIndex < 0">
-           <app-todo-list></app-todo-list>
+          <app-todo-list></app-todo-list>
         </ng-container>
         <ng-container *ngIf="categoryIndex === categoryId.Application_Link">
           <app-applications-link></app-applications-link>
@@ -39,6 +40,6 @@
           <app-resume-link></app-resume-link>
         </ng-container>
       </section>
+    </div>
   </div>
- </div>
 </section>
