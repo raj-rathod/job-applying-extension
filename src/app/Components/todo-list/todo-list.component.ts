@@ -19,6 +19,7 @@ export class TodoListComponent implements OnInit {
   tabsList: Tab[] = [];
   savedTabs: Tab[] = [];
   todoList: Tab[] = [];
+  loading = false;
   category = category;
   actionsList = actions;
   defaultIcon = defaultIcon;
@@ -51,9 +52,11 @@ export class TodoListComponent implements OnInit {
   }
 
   getAllSavedtabsFromStorage(): void {
+    this.loading = true;
     this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
       this.savedTabs = tabs;
       this.getAllTodoTask(tabs);
+      this.loading = false;
     });
   }
 

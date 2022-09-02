@@ -17,6 +17,7 @@ export class ApplicationsLinkComponent implements OnInit {
   actionsList = actions;
   jobStatusTab = jobStatusTab;
   jobStatus = jobStatus;
+  loading = false;
   savedTabs: Tab[] = [];
   applicationsList: Tab[] = [];
   constructor(private tabsService: TabsService) {}
@@ -26,8 +27,10 @@ export class ApplicationsLinkComponent implements OnInit {
   }
 
   getAllSavedtabsFromStorage(): void {
+    this.loading = true;
     this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
       this.savedTabs = tabs;
+      this.loading = false;
       this.getAllStudyMaterialLinks(tabs);
     });
   }

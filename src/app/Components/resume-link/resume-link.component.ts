@@ -14,6 +14,7 @@ export class ResumeLinkComponent implements OnInit {
   defaultIcon = defaultIcon;
   actionIcon = actionIcon;
   actionsList = actions;
+  loading = false;
   savedTabs: Tab[] = [];
   resumeList: Tab[] = [];
   constructor(private tabsService: TabsService) {}
@@ -23,8 +24,10 @@ export class ResumeLinkComponent implements OnInit {
   }
 
   getAllSavedtabsFromStorage(): void {
+    this.loading = true;
     this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
       this.savedTabs = tabs;
+      this.loading = false;
       this.getAllStudyMaterialLinks(tabs);
     });
   }

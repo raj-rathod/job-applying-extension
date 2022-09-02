@@ -8,6 +8,7 @@ import { ApplicationsLinkComponent } from './Components/applications-link/applic
 import { ResumeLinkComponent } from './Components/resume-link/resume-link.component';
 import { CareerPagesLinkComponent } from './Components/career-pages-link/career-pages-link.component';
 import { StudyMaterialComponent } from './Components/study-material/study-material.component';
+import { LoaderComponent } from './Components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { StudyMaterialComponent } from './Components/study-material/study-materi
     ResumeLinkComponent,
     CareerPagesLinkComponent,
     StudyMaterialComponent,
+    LoaderComponent,
   ],
   imports: [BrowserModule],
   providers: [],
