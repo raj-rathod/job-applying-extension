@@ -8,7 +8,7 @@ import { TabsService } from 'src/Shared/services/tabs.service';
 @Component({
   selector: 'app-resume-link',
   templateUrl: './resume-link.component.html',
-  styleUrls: ['./resume-link.component.css']
+  styleUrls: ['./resume-link.component.css'],
 })
 export class ResumeLinkComponent implements OnInit {
   defaultIcon = defaultIcon;
@@ -16,9 +16,7 @@ export class ResumeLinkComponent implements OnInit {
   actionsList = actions;
   savedTabs: Tab[] = [];
   resumeList: Tab[] = [];
-  constructor(
-    private tabsService: TabsService
-  ) { }
+  constructor(private tabsService: TabsService) {}
 
   ngOnInit(): void {
     this.getAllSavedtabsFromStorage();
@@ -31,22 +29,26 @@ export class ResumeLinkComponent implements OnInit {
     });
   }
 
-  setAllTabsInStorage(tabs:Tab[]): void {
-    this.tabsService.setAllTabsInStorage(tabs).subscribe(res=> {
+  setAllTabsInStorage(tabs: Tab[]): void {
+    this.tabsService.setAllTabsInStorage(tabs).subscribe((res) => {
       this.getAllSavedtabsFromStorage();
     });
   }
 
   getAllStudyMaterialLinks(allSavedLinks: Tab[]): void {
-    this.resumeList = allSavedLinks.filter(link=> link.categoryId === LinkCategory.Resume_link);
+    this.resumeList = allSavedLinks.filter(
+      (link) => link.categoryId === LinkCategory.Resume_link
+    );
   }
 
   todoAction(actionIndex: number, linkIndex: number): void {
-    const index = this.savedTabs.findIndex(saveTab => saveTab == this.resumeList[linkIndex]);
-    if(actionIndex === Actions.todo){
+    const index = this.savedTabs.findIndex(
+      (saveTab) => saveTab == this.resumeList[linkIndex]
+    );
+    if (actionIndex === Actions.todo) {
       this.savedTabs[index].todo = true;
     }
-    if(actionIndex === Actions.delete){
+    if (actionIndex === Actions.delete) {
       this.savedTabs.splice(index, 1);
     }
     this.setAllTabsInStorage(this.savedTabs);

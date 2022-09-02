@@ -8,7 +8,7 @@ import { TabsService } from 'src/Shared/services/tabs.service';
 @Component({
   selector: 'app-study-material',
   templateUrl: './study-material.component.html',
-  styleUrls: ['./study-material.component.css']
+  styleUrls: ['./study-material.component.css'],
 })
 export class StudyMaterialComponent implements OnInit {
   defaultIcon = defaultIcon;
@@ -16,9 +16,7 @@ export class StudyMaterialComponent implements OnInit {
   actionsList = actions;
   savedTabs: Tab[] = [];
   studyMaterialList: Tab[] = [];
-  constructor(
-    private tabsService: TabsService
-  ) { }
+  constructor(private tabsService: TabsService) {}
 
   ngOnInit(): void {
     this.getAllSavedtabsFromStorage();
@@ -31,25 +29,28 @@ export class StudyMaterialComponent implements OnInit {
     });
   }
 
-  setAllTabsInStorage(tabs:Tab[]): void {
-    this.tabsService.setAllTabsInStorage(tabs).subscribe(res=> {
+  setAllTabsInStorage(tabs: Tab[]): void {
+    this.tabsService.setAllTabsInStorage(tabs).subscribe((res) => {
       this.getAllSavedtabsFromStorage();
     });
   }
 
   getAllStudyMaterialLinks(allSavedLinks: Tab[]): void {
-    this.studyMaterialList = allSavedLinks.filter(link=> link.categoryId === LinkCategory.Study_Materials);
+    this.studyMaterialList = allSavedLinks.filter(
+      (link) => link.categoryId === LinkCategory.Study_Materials
+    );
   }
 
   todoAction(actionIndex: number, linkIndex: number): void {
-    const index = this.savedTabs.findIndex(saveTab => saveTab == this.studyMaterialList[linkIndex]);
-    if(actionIndex === Actions.todo){
+    const index = this.savedTabs.findIndex(
+      (saveTab) => saveTab == this.studyMaterialList[linkIndex]
+    );
+    if (actionIndex === Actions.todo) {
       this.savedTabs[index].todo = true;
     }
-    if(actionIndex === Actions.delete){
+    if (actionIndex === Actions.delete) {
       this.savedTabs.splice(index, 1);
     }
     this.setAllTabsInStorage(this.savedTabs);
   }
-
 }
