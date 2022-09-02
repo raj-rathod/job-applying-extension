@@ -1,10 +1,9 @@
 .section{
-    background: url(/assets/career.jpg) no-repeat;
-    background-size: cover;
+    background: rgba(71, 67, 67, 0.594);
 }
 .contain {
     min-height: 100vh;
-    background: rgba(35, 152, 220, 0.23);
+    background: rgba(35, 152, 220, 0.539);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9.5px);
     -webkit-backdrop-filter: blur(9.5px);

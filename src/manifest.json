@@ -1,16 +1,13 @@
 {
     "name": "Career Management",
     "version": "1.0",
+    "author": "Rajesh Rathore",
+    "homepage_url": "https://github.com/raj-rathod/",
     "description": "Career Management | Job Application Management | Student Career Management",
     "manifest_version": 3,
-    "action": {
-        "default_popup": "index.html"
-    },
-    "options_page": "index.html",
-    "host_permissions": ["*://*/"],
+    "host_permissions": ["https://*/"],
     "permissions": [ 
         "tabs", 
-        "activeTab",
         "storage"
     ],
     "icons": {
@@ -18,5 +15,16 @@
         "32": "assets/icon32.png",
         "48": "assets/icon48.png",
         "128": "assets/icon128.png"
-    }
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icons":{
+            "16": "assets/icon16.png",
+            "32": "assets/icon32.png",
+            "48": "assets/icon48.png",
+            "128": "assets/icon128.png" 
+        }
+    },
+    "options_page": "index.html",
+    "content_security_policy": { "extension_pages" : "script-src 'self'; object-src 'self'" }
 }
