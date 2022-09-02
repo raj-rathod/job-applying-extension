@@ -1,1 +1,50 @@
-<p>career-pages-link works!</p>
+<p class="text-dark m-0 fw-bold mt-3">Career page List</p>
+<div [class]="careerPageList.length > 8 ? 'list-scroller row mt-4':'row mt-4'">
+    <div class="col-lg-11" *ngFor="let tab of careerPageList; let careerpageIndex = index">
+        <div class="mb-2 d-flex align-items-center justify-content-between current-tab-list">
+            <div>
+                <a class="tab" [href]="tab?.url" target="_blank">
+                    <img [src]="tab.favIconUrl ? tab?.favIconUrl : defaultIcon" height="25px" width="25px"
+                        alt="favIconUrl" class="rounded">
+                </a>
+                <span class="small ms-3 text-dark  tab" [title]="tab.title">
+                    <a [href]="tab?.url" target="_blank">{{tab.title.length > 30 ? tab?.title?.substring(0,30) :
+                        tab?.title}}</a>
+                </span>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="dropdown tab ms-3">
+                    <div [class]="jobStatusTab[tab.status]" id="jobStatus" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{jobStatus[tab.status]}}
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="jobStatus">
+                        <ng-container *ngFor="let status of jobStatus; let statusIndex= index">
+                            <div class="px-2 py-1 mb-1 dropdown-menu-list-item tab"
+                                (click)="setStatus(statusIndex, careerpageIndex)">
+                                <p class="m-0">
+                                    {{status}}
+                                </p>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="dropdown tab ms-3">
+                    <div id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img [src]="actionIcon" width="5px" height="18px" alt="save">
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                        <ng-container *ngFor="let action of actionsList; let actionIndex= index">
+                            <div class="px-2 py-1 mb-1 dropdown-menu-list-item tab"
+                                (click)="todoAction(actionIndex, careerpageIndex)" *ngIf="actionIndex !==1">
+                                <p class="m-0">
+                                    {{action}}
+                                </p>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
