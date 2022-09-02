@@ -43,6 +43,7 @@ export class TodoListComponent implements OnInit {
           favIconUrl: tab.favIconUrl,
           windowId: tab.windowId,
           tabIndex: tab.index,
+          status: 0
         };
         this.tabsList.push(tabData);
       });
