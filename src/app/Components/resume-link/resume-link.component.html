@@ -31,6 +31,9 @@
     </div>
   </div>
 </div>
-<ng-container *ngIf="resumeList.length === 0">
+<ng-container *ngIf="loading">
+  <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="resumeList.length === 0 && !loading">
   <h2 class="text-center text-light my-4">Add your resume link</h2>
 </ng-container>

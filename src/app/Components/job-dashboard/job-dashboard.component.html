@@ -48,7 +48,10 @@
         </div>
     </div>
 </div>
-<ng-container *ngIf="jobDashboardsList.length === 0">
+<ng-container *ngIf="loading">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="jobDashboardsList.length === 0 && !loading">
     <h2 class="text-center text-light my-4">Add job dashboard link</h2>
 </ng-container>
 

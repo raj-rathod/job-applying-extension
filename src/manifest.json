@@ -1,7 +1,7 @@
 {
-    "name": "Job Apply Management Extension",
+    "name": "Career Management",
     "version": "1.0",
-    "description": "Build an Extension with Angular",
+    "description": "Career Management | Job Application Management | Student Career Management",
     "manifest_version": 3,
     "action": {
         "default_popup": "index.html"
@@ -12,5 +12,11 @@
         "tabs", 
         "activeTab",
         "storage"
-    ]
+    ],
+    "icons": {
+        "16": "assets/icon16.png",
+        "32": "assets/icon32.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+    }
 }

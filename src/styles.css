@@ -69,41 +69,41 @@ a{
 }
 
 .task-tab{
-  background: rgba(135, 206, 250, 0.427);
+  background: rgba(135, 206, 250, 0.753);
   border-radius: 4px;
   padding: 4px 14px;
-  color: whitesmoke;
-  font-weight: 600;
-  font-size: 14px;
+  color: black;
+  font-weight:500;
+  font-size:12px;
   cursor: pointer;
 }
 
 .warning-tab{
-  background: rgba(246, 246, 7, 0.427);
+  background: rgba(246, 246, 7,0.753);
   border-radius: 4px;
   padding: 4px 14px;
-  color: yellow;
-  font-weight: 600;
-  font-size: 14px;
+  color: black;
+  font-weight:500;
+  font-size:12px;
   cursor: pointer; 
 }
 
 .error-tab{
-  background: rgba(240, 8, 4, 0.427);
+  background: rgba(240, 8, 4, 0.753);
   border-radius: 4px;
   padding: 4px 14px;
-  color: rgba(255, 0, 0, 0.728);
-  font-weight: 600;
-  font-size: 14px;
+  color: white;
+  font-weight:500;
+  font-size:12px;
   cursor: pointer;
 }
 .success-tab{
-  background: rgba(4, 240, 110, 0.427);
+  background: rgba(4, 240, 110, 0.753);
   border-radius: 4px;
   padding: 4px 14px;
-  color: green;
-  font-weight: 600;
-  font-size: 14px;
+  color: black;
+  font-weight:500;
+  font-size:12px;
   cursor: pointer;
 }
 

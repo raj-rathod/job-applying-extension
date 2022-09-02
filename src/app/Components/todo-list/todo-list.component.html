@@ -66,6 +66,9 @@
     </div>
   </div>
 </div>
-<ng-container *ngIf="todoList.length === 0">
+<ng-container *ngIf="loading">
+  <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="todoList.length === 0 && !loading">
    <h2 class="text-center text-light my-4">Add task in todo list</h2>
 </ng-container>

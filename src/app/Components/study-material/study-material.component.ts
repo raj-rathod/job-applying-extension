@@ -13,6 +13,7 @@ import { TabsService } from 'src/Shared/services/tabs.service';
 export class StudyMaterialComponent implements OnInit {
   defaultIcon = defaultIcon;
   actionIcon = actionIcon;
+  loading = false;
   actionsList = actions;
   savedTabs: Tab[] = [];
   studyMaterialList: Tab[] = [];
@@ -23,8 +24,10 @@ export class StudyMaterialComponent implements OnInit {
   }
 
   getAllSavedtabsFromStorage(): void {
+    this.loading = true;
     this.tabsService.getAllSavedtabsFromStorage().subscribe((tabs) => {
       this.savedTabs = tabs;
+      this.loading = false;
       this.getAllStudyMaterialLinks(tabs);
     });
   }
