@@ -7,37 +7,36 @@
 [![Github](https://img.shields.io/github/followers/raj-rathod?label=Follow&style=social)](https://github.com/raj-rathod)
 
 # Career Management chrome extension
+I have developed "Career Management Extension". It is very useful for the students, employees as you can access all your application links, applied links, study material, resume, status of applied links at one place. Inshort this mini portal for you to track everything at one place.
 
+
+After adding this extension to the google chrome  all the open tabs will be visible inside the extension with save button. When you are saving the tab,  select a category of the tab.
+
+People can save these tabs inside below categories:
+* Application Link
+* Career Page
+* Job Dashboard
+* Study Material
+* Resume Link
+
+Adding it to above categories, it will go to to-do list and once task is completed , you can move it to completed task.
 
 <!-- ### [Check Release](https://raj-rathod.github.io/tic-toc-game/) -->
 
-### Default popup 
-
-<div align="center">
-<img src="./images/popup.png" width="500px"> 
-</div>
-
-### Category wise popup
+### Screenshots
+<img align="left" src="./images/popup.png" width="220em" height="250em"> 
+<img align="right" src="./images/option.png" height="250em"> 
+<img src="./images/category-selected.png" width="220em" height="250em"> 
 
 
-<div align="center">
-<img src="./images/category-selected.png" width="500px"> 
-</div> 
 
-### Options page
-
-<div align="center">
-<img src="./images/option.png"> 
-</div>
-
-### Options category
+### Categories selected
 
 <div align="center">
 <img src="./images/option-category.png"> 
 </div>
 
-### Status set
-
+### Status set options
 
 <div align="center">
 <img src="./images/option-status-set.png"> 
