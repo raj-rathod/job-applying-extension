@@ -2,7 +2,7 @@
     "name": "Career Management",
     "version": "1.0",
     "author": "Rajesh Rathore",
-    "homepage_url": "https://github.com/raj-rathod/",
+    "homepage_url": "https://github.com/raj-rathod/job-applying-extension",
     "description": "Career Management | Job Application Management | Student Career Management",
     "manifest_version": 3,
     "host_permissions": ["https://*/"],
