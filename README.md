@@ -25,8 +25,8 @@ Adding it to above categories, it will go to to-do list and once task is complet
 
 ### Screenshots
 <img align="left" src="./images/popup.png" width="220em" height="250em"> 
-<img align="right" src="./images/option.png" height="250em"> 
-<img src="./images/category-selected.png" width="220em" height="250em"> 
+<img  src="./images/option.png" height="250em"> 
+
 
 ### Set Status
 <img src="./images/option-status-set.png"> 
