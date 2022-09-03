@@ -42,10 +42,10 @@ By visiting the saved links inside different categories you can also update stat
 * Interview Pass
 * Offer Letter
 
-So you can easily track all the applications and update there status, You don't need to worry about the application links and there status as well as study materials as you can easily access all of them at one place.
+So you can **easilytrack all the applications and update there status**, You don't need to worry about the **application links and there status as well as study materials** as you can easily access all of them at one place.
 
 Currently I am at the same phase where I want everything at one place and easily see where I have applied and what was the result for that .
 
-Do add this extension to your chrome browser and try this at least once, feel free to provide feedback, improvements and new ideas.
+Do add this extension to your chrome browser and try this at least once, feel free to provide **feedback, improvements and new ideas**.
 
-Thanks,
+**Thanks,**
