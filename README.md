@@ -9,7 +9,7 @@
 # Career Management chrome extension
 
 <p align="center">
-<img src="./images/icon128.png" width="250em" height="250em">
+<img src="./images/extension-cover.png" >
 </p>
  
 I have developed **"Career Management Extension"**. It is very useful for the **students, employees** as you can access all your **application links, applied links, study material, resume, status of applied links** at one place. Inshort this mini portal for you to track everything at one place.
