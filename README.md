@@ -52,7 +52,7 @@ Currently I am at the same phase where I want everything at one place and easily
 Do add this extension to your chrome browser and try this at least once, feel free to provide **feedback, improvements and new ideas**.
 
 
-## Connect with me ~Rajesh 
+## Connect with me ~Rajesh Rathore
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-0e76a8?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/rajesh-rathore-0501/)
 [![Website Badge](https://img.shields.io/badge/Website-3b5998?style=flat-square&logo=google-chrome&logoColor=white)](https://linktr.ee/rajesh_rathore)
